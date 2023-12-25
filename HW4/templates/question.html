@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Анкета {% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h1><small>Анкета</small></h1>
+        <h6> Здесь я задам два вопроса про варианты считалочек. Если вам привычен вариант, которого нет в списке, напишите его в поле ниже.
+		И еще укажите регион, из которого вы родом. </h6>
+		<p></p>
+		<p></p>
+        <form action="/question" method = 'GET'>
+		<fieldset>
+		<h5><small>Вы встаете в круг и хлопаете в ладоши. А кто летает в считалочке?<h5><small><br>
+            <input type="radio" name="who_flies" value="Дракончики"> Дракончики<br>
+            <input type="radio" name="who_flies" value="Лебедь"> Лебедь<br>
+			<input type="radio" name="who_flies" value="Ворона"> Ворона<br>
+			<input type="radio" name="who_flies" value="Корова"> Корова<br>
+		<p></p>
+	    <h5><small>... может быть, мы кого-то забыли? Напишите сюда!<h5><small><br>			
+			<input type="text" name="who_flies_txt" pattern='[A-Za-zА-Яа-яЁё]+'><br>
+		<p></p>
+		<p></p>
+		<p></p>
+		<h5><small>Еще один.вопрос. Как вы называете жадину-говядину?<h5><small><br>
+		    <input type="radio" name="greedy" value="Соленый огурец"> Соленый огурец<br>
+            <input type="radio" name="greedy" value="Пустая шоколадина"> Пустая шоколадина<br>
+			<input type="radio" name="greedy" value="Турецкий барабан"> Турецкий барабан<br>
+	    <p></p>
+		<h5><small>... еще варианты?<h5><small><br>			
+			<input type="text" name="greedy_txt" pattern='[A-Za-zА-Яа-яЁё]+'><br>
+		<p></p>
+		<p></p>
+		<p></p>
+		<h5><small> И напоследок: откуда вы?<h5><small><br>
+			<input type="text" name="area" required pattern='[A-Za-zА-Яа-яЁё]+'><br>
+		<p></p>
+		<p></p>			
+        <button type="submit"><a class="nav-link" href="/result">Отправить</a></button>
+		</fieldset>
+        </form>
+{% endblock %}
